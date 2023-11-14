@@ -1,1 +1,5 @@
-# Network-Scanner
+The provided Python script leverages the power of the nmap3 library and concurrent programming to conduct efficient and concurrent network port scanning on a list of hosts. The NetworkScanner class encapsulates the scanning logic, offering methods for validating IP addresses, scanning hosts for open ports, and obtaining IP addresses from hostnames. The script reads a list of hosts from a file, eliminating duplicates, and initiates a threaded scanning process using concurrent.futures.ThreadPoolExecutor. This allows simultaneous scanning of multiple hosts, enhancing the speed and efficiency of the network exploration.
+
+The scanning process involves utilizing the Nmap tool with specific arguments to identify open ports (20, 21, 22, 23, 25, 53, 69, 80, 443, 3301). The results are collected and organized into a Pandas DataFrame, providing a structured view of each host's details, including hostname, IP address, and open ports.
+
+The script not only showcases effective network scanning capabilities but also demonstrates good coding practices by encapsulating functionalities into a class and utilizing concurrent programming for parallel execution. This makes it a valuable tool for network administrators, security professionals, or anyone seeking to quickly and concurrently assess the status of multiple hosts within a network.
