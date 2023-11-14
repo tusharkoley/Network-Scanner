@@ -1,5 +1,47 @@
-The provided Python script leverages the power of the nmap3 library and concurrent programming to conduct efficient and concurrent network port scanning on a list of hosts. The NetworkScanner class encapsulates the scanning logic, offering methods for validating IP addresses, scanning hosts for open ports, and obtaining IP addresses from hostnames. The script reads a list of hosts from a file, eliminating duplicates, and initiates a threaded scanning process using concurrent.futures.ThreadPoolExecutor. This allows simultaneous scanning of multiple hosts, enhancing the speed and efficiency of the network exploration.
+# Network Scanner
 
-The scanning process involves utilizing the Nmap tool with specific arguments to identify open ports (20, 21, 22, 23, 25, 53, 69, 80, 443, 3301). The results are collected and organized into a Pandas DataFrame, providing a structured view of each host's details, including hostname, IP address, and open ports.
+## Overview
 
-The script not only showcases effective network scanning capabilities but also demonstrates good coding practices by encapsulating functionalities into a class and utilizing concurrent programming for parallel execution. This makes it a valuable tool for network administrators, security professionals, or anyone seeking to quickly and concurrently assess the status of multiple hosts within a network.
+The Network Scanner is a Python script designed to perform concurrent scanning of hosts for open ports. It utilizes the `nmap3` library for port scanning and supports multi-threading for efficient scanning of multiple hosts simultaneously.
+
+## Features
+
+- **IP Validation:** The script includes a method to validate the format of an IP address.
+- **Host Scanning:** Scans hosts for open ports using the Nmap tool with specified port numbers.
+- **Concurrent Execution:** Leverages Python's `concurrent.futures.ThreadPoolExecutor` for concurrent scanning of multiple hosts.
+- **Output Generation:** Outputs the scan results, including hostnames, IP addresses, and open ports, to a CSV file ('output.csv').
+
+## Dependencies
+
+- `nmap3`
+- `pandas`
+
+## Usage
+
+1. **Installation:**
+   - Install the required dependencies using `pip install -r requirements.txt`.
+
+2. **Host List:**
+   - Create a file named 'hosts.txt' containing a list of hosts (hostnames or IP addresses) to be scanned, with each host on a new line.
+
+3. **Execution:**
+   - Run the script using `python network_scanner.py`.
+   - The script will perform concurrent scanning of the hosts and generate an 'output.csv' file with the scan results.
+
+## Output Format
+
+The generated 'output.csv' file will have the following columns:
+
+- `host`: Hostname or IP address of the scanned host.
+- `ip`: IP address of the host.
+- `ports`: List of open ports on the host.
+
+## Notes
+
+- The script uses Nmap for port scanning, and it should be installed on the system for accurate results.
+- Adjust the list of ports to scan in the `args` parameter of the `nmap_portscan_only` method if needed.
+
+## Example
+
+```bash
+$ python network_scanner.py
