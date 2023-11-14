@@ -1,0 +1,6 @@
+,host,ip,ports
+0,abctest.com,199.59.243.225,"['80', '443']"
+1,abcasdasdad.com,Invalid,['NA']
+2,scanme.nmap.org,45.33.32.156,['22']
+3,google.com,142.250.179.238,"['80', '443']"
+4,www.codewithtk.net,178.79.144.215,"['22', '80', '443']"
